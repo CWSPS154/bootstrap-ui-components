@@ -3,7 +3,6 @@
     "description": "Help to build ui elements with bootstrap using laravel components",
     "type": "library",
     "require": {
-        "laravel/ui": "5.x-dev"
     },
     "license": "MIT",
     "authors": [
@@ -21,11 +20,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CWSPS154\\BootstrapUiComponents\\BootstrapUiComponentsServiceProvider\\"
-            ],
-            "aliases": {
-                "CWSPS154": "CWSPS154\\BootstrapUiComponents\\"
-            }
+                "CWSPS154\\BootstrapUiComponents\\BootstrapUiComponentsServiceProvider"
+            ]
         }
     }
 }
