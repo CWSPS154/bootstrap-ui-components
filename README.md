@@ -53,7 +53,7 @@ You can use these components with the namespace `x-buicomponents`
 ### Select2
 You can enable/disable select2 and change its cdn link from config `buicomponents.php`
 - In Controller
-    ```    
+    ```
   public function getAreas()
     {
         if (\request()->ajax()) {
@@ -76,7 +76,7 @@ You can enable/disable select2 and change its cdn link from config `buicomponent
             }
             return response()->json($response);
         }
-    }```
+    }
 - `In Blade`
 
       <x-buicomponents::ui.select label="Area" name="area" id="area" required options="area.list" class="area"/>
