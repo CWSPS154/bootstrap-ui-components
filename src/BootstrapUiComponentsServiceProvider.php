@@ -35,5 +35,14 @@ class BootstrapUiComponentsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/resources/views/','bui-components');
         Blade::componentNamespace('CWSPS154\\BootstrapUiComponents\\View\\Components','buicomponents');
+        $this->publishes([
+            __DIR__.'/config/buicomponents.php' => config_path('buicomponents.php'),'config'
+        ]);
+        $this->publishes([
+            __DIR__.'/resources/views/components' => resource_path('views/components/buicomponents'),'components'
+        ]);
+        $this->publishes([
+            __DIR__.'/View' => app_path('View/Components/Buicomponents'),'view'
+        ]);
     }
 }
