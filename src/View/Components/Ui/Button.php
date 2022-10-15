@@ -72,6 +72,6 @@ class Button extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('bui-components::components.ui.button');
+        return view('bootstrap-ui-components::components.ui.button');
     }
 }

@@ -54,6 +54,6 @@ class Form extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('bui-components::components.ui.form');
+        return view('bootstrap-ui-components::components.ui.form');
     }
 }

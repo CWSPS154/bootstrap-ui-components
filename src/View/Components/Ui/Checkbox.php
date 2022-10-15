@@ -76,6 +76,6 @@ class Checkbox extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('bui-components::components.ui.checkbox');
+        return view('bootstrap-ui-components::components.ui.checkbox');
     }
 }

@@ -19,7 +19,6 @@
 
 namespace CWSPS154\BootstrapUiComponents;
 
-use CWSPS154\BootstrapUiComponents\View\Components\Ui\Input;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,13 +31,9 @@ class BootstrapUiComponentsServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/resources/views/','bui-components');
+        $this->loadViewsFrom(__DIR__ . '/resources/views/','bootstrap-ui-components');
         Blade::componentNamespace('CWSPS154\\BootstrapUiComponents\\View\\Components','buicomponents');
-        $this->publishes([
-            __DIR__.'/config/buicomponents.php' => config_path('buicomponents.php'),
-            __DIR__.'/resources/views/components' => resource_path('views/components/buicomponents'),
-            __DIR__.'/View' => app_path('View/Components/Buicomponents'),
-        ]);
+        $this->publishes([__DIR__.'/config/buicomponents.php' => config_path('buicomponents.php')],'config');
+        $this->publishes([__DIR__.'/resources/views/components/ui' => resource_path('views/vendor/bootstrap-ui-components/components/ui')],'components');
     }
 }

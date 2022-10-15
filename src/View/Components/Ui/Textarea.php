@@ -90,6 +90,6 @@ class Textarea extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('bui-components::components.ui.textarea');
+        return view('bootstrap-ui-components::components.ui.textarea');
     }
 }

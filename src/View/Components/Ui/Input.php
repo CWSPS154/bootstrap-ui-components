@@ -96,6 +96,6 @@ class Input extends Component
      */
     public function render(): View|Factory|Application
     {
-        return view('bui-components::components.ui.input');
+        return view('bootstrap-ui-components::components.ui.input');
     }
 }

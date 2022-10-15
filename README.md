@@ -3,7 +3,7 @@
 <a href="https://github.com/CWSPS154/bootstrap-ui-components/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CWSPS154/bootstrap-ui-components"></a>
 <a href="https://github.com/CWSPS154/bootstrap-ui-components"><img alt="GitHub license" src="https://img.shields.io/github/license/CWSPS154/bootstrap-ui-components"></a>
 
- Help to build ui elements with bootstrap using laravel components
+Help to build ui elements with bootstrap using laravel components
 # Installation
 Using Composer
 ```bash
@@ -15,10 +15,10 @@ php artisan vendor:publish
 ```
 You can use tag also
 ```bash
- php artisan vendor:publish --tag=config --tag=public --tag=view
+ php artisan vendor:publish --tag=config --tag=public --tag=components
 ```
 # Documentation
-### Components available 
+### Components available
 - `form`
 - `input`
 - `textarea`
@@ -32,7 +32,7 @@ You can use these components with the namespace `x-buicomponents`
 
         <x-buicomponents::ui.form method="POST" action="{{ route('test') }}">````````</x-buicomponents::ui.form>
 - `x-buicomponents::ui.input`
-  
+
       <x-buicomponents::ui.input type="text" name="test" label="Test" placeholder="Please Enter" data-id="taa" required>Sanoop</x-buicomponents::ui.input>
 - `x-buicomponents::ui.textarea`
 
@@ -44,7 +44,7 @@ You can use these components with the namespace `x-buicomponents`
 
       <x-buicomponents::ui.radio name="checkbox" id="test1" value="1" required>Check me out</x-buicomponents::ui.radio>
 - `x-buicomponents::ui.checkbox`
-    
+
       <x-buicomponents::ui.checkbox name="checkbox" id="testc" value="1" required>Check me out</x-buicomponents::ui.checkbox>
 - `x-buicomponents::ui.button`
 
@@ -91,17 +91,11 @@ You can enable/disable select2 and change its cdn link from config `buicomponent
         <x-buicomponents::ui.textarea name="textarea" required label="Textarea">Check me out</x-buicomponents::ui.textarea>
         <x-buicomponents::ui.button name="save" color="primary" class="test" data-id="test">Save</x-buicomponents::ui.button>
     </x-buicomponents::ui.form>
-### Demo
-Visit this url in your project
-```bash
-http://127.0.0.1:8000/test
-```
 
 ## Author
 
 - Github [@CWSPS154](https://www.github.com/CWSPS154)
 - Gmail [@codewithsps154@gmail.com](mailto:codewithsps154@gmail.com)
-- 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
