@@ -15,7 +15,7 @@ php artisan vendor:publish
 ```
 You can use tag also
 ```bash
- php artisan vendor:publish --tag=config --tag=public --tag=components
+ php artisan vendor:publish --tag=config --tag=components
 ```
 # Documentation
 ### Components available
@@ -25,6 +25,7 @@ You can use tag also
 - `select` - supporting `select2`
 - `radio`
 - `checkbox`
+- `file`
 - `button`
 ### Usage
 You can use these components with the namespace `x-buicomponents`
@@ -46,6 +47,9 @@ You can use these components with the namespace `x-buicomponents`
 - `x-buicomponents::ui.checkbox`
 
       <x-buicomponents::ui.checkbox name="checkbox" id="testc" value="1" required>Check me out</x-buicomponents::ui.checkbox>
+- `x-buicomponents::ui.file`
+
+      <x-buicomponents::ui.file name="test" label="Test" data-id="taa" required></x-buicomponents::ui.file>
 - `x-buicomponents::ui.button`
 
       <x-buicomponents::ui.button name="save" color="primary" class="test" data-id="test">Save</x-buicomponents::ui.button>
@@ -89,6 +93,7 @@ You can enable/disable select2 and change its cdn link from config `buicomponent
         <x-buicomponents::ui.radio name="checkbox" id="test3" value="1" required>Check me out</x-buicomponents::ui.radio>
         <x-buicomponents::ui.select label="Street Area" name="area_id" id="area_id" required :options="['test'=>'fff']" class="area" value="test"></x-buicomponents::ui.select>
         <x-buicomponents::ui.textarea name="textarea" required label="Textarea">Check me out</x-buicomponents::ui.textarea>
+        <x-buicomponents::ui.file name="test" label="Test" data-id="taa" required></x-buicomponents::ui.file>
         <x-buicomponents::ui.button name="save" color="primary" class="test" data-id="test">Save</x-buicomponents::ui.button>
     </x-buicomponents::ui.form>
 
