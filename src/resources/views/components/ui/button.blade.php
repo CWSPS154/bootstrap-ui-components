@@ -1,1 +1,1 @@
-<button type="{{ $type }}" class="{{ 'btn btn-'.$color.' '.$class }}" {{ $attributes }}>{{ $slot }}</button>
+<button type="{{ $type }}" class="{{ $class }}" {{ $attributes }}>{{ $slot }}</button>

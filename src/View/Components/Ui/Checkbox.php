@@ -1,15 +1,12 @@
 <?php
 
 /**
- * PHP Version 8.1.11
- * Laravel Framework 9.34.0
+ * PHP Version 8.*
+ * Laravel Framework 9.* - 10.*
  *
  * @category Component
  *
- * @package Laravel
- *
  * @author CWSPS154 <codewithsps154@gmail.com>
- *
  * @license MIT License https://opensource.org/licenses/MIT
  *
  * @link https://github.com/CWSPS154
@@ -19,63 +16,66 @@
 
 namespace CWSPS154\BootstrapUiComponents\View\Components\Ui;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-
-class Checkbox extends Component
+class Checkbox extends BaseInput
 {
     /**
      * @var string
      */
-    public string $name;
+    protected string $template = 'components.ui.checkbox';
+
+    /**
+     * @var string|null
+     */
+    public ?string $class = 'form-check-input';
+
     /**
      * @var string
      */
-    public string $id;
-    /**
-     * @var string|null
-     */
-    public ?string $class;
-    /**
-     * @var string|null
-     */
-    public ?string $value;
-    /**
-     * @var bool
-     */
-    public bool $required;
+    public string $type = 'checkbox';
 
     /**
-     * Create a new component instance.
-     *
-     * @param string $name
-     * @param string|null $id
-     * @param string|null $class
-     * @param string|null $value
-     * @param bool $required
+     * @var string
      */
-    public function __construct(string $name,
-                                string $id = null,
-                                string $class = null,
-                                string $value = null,
-                                bool   $required = false)
+    public string $btFormClass = 'form-group form-check';
+
+    /**
+     * @var string|null
+     */
+    public ?string $labelClass = 'form-check-label';
+
+    /**
+     * @param $value
+     * @return string|null
+     */
+    public function isChecked($value): ?string
     {
-        $this->name=$name;
-        $this->id=$id ?? $name;
-        $this->class=$class;
-        $this->value=$value;
-        $this->required = $required;
+        return $value === $this->attributes->get('defaultValue') ? 'checked' : null;
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
-     * @return Application|Factory|View
+     * @return int|null
      */
-    public function render(): View|Factory|Application
+    public function getArrayIndex(): ?int
     {
-        return view('bootstrap-ui-components::components.ui.checkbox');
+        $start = strpos($this->name, '[');
+        $end = strpos($this->name, ']');
+        if ($start !== false && $end !== false && $end > $start) {
+            $index = substr($this->name, $start + 1, $end - $start - 1);
+            if ($index) {
+                return intval($index);
+            } else {
+                return 0;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * @return string
+     */
+    public function mergedName(): string
+    {
+        return $this->getArrayIndex() === 0 || $this->getArrayIndex() ? $this->getName().'.'.$this->getArrayIndex() : $this->getName();
     }
 }

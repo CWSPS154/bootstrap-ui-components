@@ -1,5 +1,4 @@
 <?php
-
 /**
  * PHP Version 8.*
  * Laravel Framework 9.* - 10.*
@@ -11,20 +10,15 @@
  *
  * @link https://github.com/CWSPS154
  *
- * Date 05/11/22
+ * Date 07/04/23
  * */
 
 namespace CWSPS154\BootstrapUiComponents\View\Components\Ui;
 
-class File extends Input
+class CropImage extends BaseInput
 {
     /**
      * @var string
      */
-    protected string $template = 'components.ui.file';
-
-    /**
-     * @var string
-     */
-    public string $type = 'file';
+    protected string $template = 'components.ui.crop-image';
 }

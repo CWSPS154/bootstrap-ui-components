@@ -1,15 +1,12 @@
 <?php
 
 /**
- * PHP Version 8.1.11
- * Laravel Framework 9.34.0
+ * PHP Version 8.*
+ * Laravel Framework 9.* - 10.*
  *
  * @category Component
  *
- * @package Laravel
- *
  * @author CWSPS154 <codewithsps154@gmail.com>
- *
  * @license MIT License https://opensource.org/licenses/MIT
  *
  * @link https://github.com/CWSPS154
@@ -19,77 +16,36 @@
 
 namespace CWSPS154\BootstrapUiComponents\View\Components\Ui;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-
-class Textarea extends Component
+class Textarea extends BaseInput
 {
     /**
      * @var string
      */
-    public string $name;
-    /**
-     * @var string
-     */
-    public string $label;
-    /**
-     * @var string
-     */
-    public string $id;
-    /**
-     * @var string
-     */
-    public string $placeholder;
-    /**
-     * @var string
-     */
-    public string $help;
-    /**
-     * @var string
-     */
-    public string $class;
-    /**
-     * @var bool
-     */
-    public bool $required;
+    protected string $template = 'components.ui.textarea';
 
     /**
-     * Create a new component instance.
-     *
-     * @param string $name
-     * @param string $class
-     * @param string|null $placeholder
-     * @param string|null $id
-     * @param string $label
-     * @param string $help
-     * @param bool $required
+     * @return string
      */
-    public function __construct(string $name,
-                                string $class = '',
-                                string $placeholder = null,
-                                string $id = null,
-                                string $label = '',
-                                string $help = '',
-                                bool   $required = false)
+    public function getPlugins(): string
     {
-        $this->name=$name;
-        $this->id=$id ?? $name;
-        $this->class=$class;
-        $this->label=$label;
-        $this->placeholder=$placeholder ?? $label;
-        $this->help=$help;
-        $this->required=$required;
+        $configPlugin = explode(' ', config('buicomponents.tinymce.plugins'));
+        $optionPlugin = explode(' ', $this->attributes->get('plugins'));
+        $merged_array = array_merge($configPlugin, $optionPlugin);
+        $unique_array = array_diff($merged_array, array_intersect($configPlugin, $optionPlugin));
+
+        return implode(' ', $unique_array);
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
-     * @return Application|Factory|View
+     * @return string
      */
-    public function render(): View|Factory|Application
+    public function getToolbar(): string
     {
-        return view('bootstrap-ui-components::components.ui.textarea');
+        $configToolbar = explode(' | ', config('buicomponents.tinymce.toolbar'));
+        $optionToolbar = explode(' | ', $this->attributes->get('toolbar'));
+        $merged_array = array_merge($optionToolbar, $configToolbar);
+        $unique_array = array_diff($merged_array, array_intersect($configToolbar, $optionToolbar));
+
+        return implode(' | ', $unique_array);
     }
 }
