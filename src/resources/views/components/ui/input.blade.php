@@ -26,7 +26,7 @@
 
         <input type="{{ $type }}" class="{{ $inputClass }}" id="{{ $id }}" name="{{ $name }}"
                {{ $isHelp() }} placeholder="{{ $placeholder }}"
-               {{ $attributes }} value="{{ $getName() ? old($getName(),$value) : null }}">
+               {{ $attributes }} value="{{ $getName() ? old($name,$value) : null }}">
 
         @if($help)
             <small id="{{ $getName() }}Help" class="{{ $helpClass }}">{{ $help }}</small>
