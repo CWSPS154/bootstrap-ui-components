@@ -19,6 +19,7 @@ return [
     'error-class' => 'invalid-feedback',
     'select2' => [
         'enable' => true,
+        'custom-css' => true,
         'css' => [
             'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
             'https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css',

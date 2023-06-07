@@ -2,7 +2,7 @@
     @if (strtoupper($method) != 'GET')
         @csrf
         @if($update)
-            @method('PATCH'))
+            @method('PATCH')
         @endif
     @endif
     {{ $slot }}

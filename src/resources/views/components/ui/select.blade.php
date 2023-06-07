@@ -5,6 +5,7 @@
             <link rel="stylesheet" href="{{ $css }}" crossorigin="anonymous">
         @empty
         @endforelse
+        @if(config('buicomponents.select2.custom-css'))
         <style>
             .select2-selection__rendered {
                 line-height: 31px !important;
@@ -52,6 +53,7 @@
                 background-size: calc(0.75em + 102.375rem) calc(0.75em + 0.375rem);
             }
         </style>
+        @endif
     @endpushonce
 @endif
 @if($btForm)
