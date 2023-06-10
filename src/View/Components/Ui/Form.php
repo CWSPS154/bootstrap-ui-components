@@ -34,17 +34,26 @@ class Form extends BaseComponent
     public bool $update;
 
     /**
+     * @var bool
+     */
+    public bool $delete;
+
+    /**
      * Create a new component instance.
      *
-     * @param  string  $method
-     * @param  bool  $update
+     * @param string $method
+     * @param bool $update
+     * @param bool $delete
+     * @param string|null $template
      */
     public function __construct(string $method = 'GET',
                                 bool $update = false,
+                                bool $delete = false,
                                 string $template = null
     ) {
         $this->method = $method;
         $this->update = $update;
+        $this->delete = $delete;
         $this->template = $template ?? $this->template;
     }
 }
