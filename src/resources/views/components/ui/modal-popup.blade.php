@@ -31,13 +31,13 @@
 @endprepend
 
 @if($attributes->has('modal-form-id') && $attributes->has('modal-footer-action-button-class'))
-    @pushonce('scripts')
+    @push('scripts')
         <script type="text/javascript">
             $('.{{ $attributes->get('modal-footer-action-button-class') }}').click(function () {
                 $('#{{ $attributes->get('modal-form-id') }}').submit();
             });
         </script>
-    @endpushonce
+    @endpush
 @endif
 
 @push('scripts')
