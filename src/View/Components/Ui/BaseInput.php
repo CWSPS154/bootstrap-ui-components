@@ -142,6 +142,7 @@ class BaseInput extends BaseComponent
         $this->help = $help;
         $this->helpClass = $helpClass ?? $this->helpClass;
         $this->template = $template ?? $this->template;
+        $this->setHidden();
     }
 
     /**
@@ -163,5 +164,15 @@ class BaseInput extends BaseComponent
         }
 
         return $trimmedName;
+    }
+
+    public function setHidden()
+    {
+        if($this->type == 'hidden')
+        {
+            $this->btForm = false;
+            $this->label = false;
+            $this->error = false;
+        }
     }
 }
