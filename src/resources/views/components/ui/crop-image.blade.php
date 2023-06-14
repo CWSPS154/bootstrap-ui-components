@@ -22,7 +22,8 @@
                                              :preview-theme="$attributes->get('preview-theme')"
                                              :required="$attributes->get('required')"
                                              :error="$attributes->get('error') ?? $error"
-                                             :form-id="$attributes->get('form-id')"/>
+                                             :form-id="$attributes->get('form-id')" 
+                                             :class="$class"/>
 <x-bootstrap-ui-components::ui.modal-popup :name="$getName().'_modal'" modal-title="Crop the image"
                                            modal-footer-action-button="Crop"
                                            modal-footer-action-button-class="{{ $getName() }}_crop">

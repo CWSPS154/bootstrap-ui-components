@@ -21,4 +21,9 @@ class CropImage extends BaseInput
      * @var string
      */
     protected string $template = 'components.ui.crop-image';
+
+        /**
+     * @var string|null
+     */
+    public ?string $class = 'img-fluid';
 }

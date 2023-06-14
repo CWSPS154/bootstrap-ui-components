@@ -56,7 +56,7 @@
     <div class="cropped-image-preview {{ $name }}_validation">
         <div class="mb-4 d-flex justify-content-center">
             <img src="{{ old($name,$value) ?? asset('/vendor/bootstrap-ui-components/default-image.png') }}"
-                 alt="{{ $name }}" class="img-fluid img-thumbnail" id="{{ $name }}_out_put_preview"/>
+                 alt="{{ $name }}" class="{{ $class }}" id="{{ $name }}_out_put_preview"/>
         </div>
         <div class="d-flex justify-content-center cropped-image-preview-action">
             <div class="btn btn-primary w-100">
@@ -78,7 +78,7 @@
             <label for="{{ $name }}_file_input">
                 <img
                     src="{{ old($name,$value) ?? asset('/vendor/bootstrap-ui-components/default-image.png') }}"
-                    alt="{{ $name }}" class="img-fluid" id="{{ $name }}_out_put_preview">
+                    alt="{{ $name }}" class="{{ $class }}" id="{{ $name }}_out_put_preview">
                 <x-buicomponents::ui.file name="{{ $name }}_file_input" id="{{ $name }}_file_input"
                                           class="d-none" :btForm="false" labelClass="mb-0"
                                           accept="image/png, image/gif, image/jpeg"></x-buicomponents::ui.file>
