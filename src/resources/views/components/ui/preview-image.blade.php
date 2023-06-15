@@ -111,9 +111,9 @@
                     let value = $('#{{ $name }}').val();
                     if(!value)
                     {
-                        e.preventDefault();
                         let required = '{{ $attributes->get('required') }}';
                         if (required) {
+                            e.preventDefault();
                             $('.{{ $name }}_validation').addClass('error');
                             $('.{{ $name }}_validation .cropped-image-preview-action .btn').removeClass('btn-primary');
                             $('.{{ $name }}_validation .cropped-image-preview-action .btn').addClass('btn-danger');
