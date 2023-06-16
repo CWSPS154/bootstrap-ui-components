@@ -44,7 +44,7 @@ return [
     'cropper' => [
         'enable' => true,
         'theme' => 'bootstrap', // bootstrap or overlay
-        'default_image' => asset('/vendor/bootstrap-ui-components/default-image.png'),
+        'default_image' => '/vendor/bootstrap-ui-components/default-image.png',
         'css' => [
             'https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.css',
         ],
