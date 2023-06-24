@@ -20,6 +20,7 @@
                                              :button-name="$attributes->get('button-name')"
                                              :button-name-on-change="$attributes->get('button-name-on-change')"
                                              :preview-theme="$attributes->get('preview-theme')"
+                                             :default-image="$attributes->get('default-image')"
                                              :required="$attributes->get('required')"
                                              :error="$attributes->get('error') ?? $error"
                                              :form-id="$attributes->get('form-id')" 

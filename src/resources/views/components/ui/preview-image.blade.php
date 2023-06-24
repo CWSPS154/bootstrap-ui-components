@@ -55,7 +55,7 @@
 @if(($attributes->get('preview-theme') ? $attributes->get('preview-theme')==='bootstrap' : config('buicomponents.cropper')['theme']=='bootstrap') && config('buicomponents.cropper')['enable'])
     <div class="cropped-image-preview {{ $name }}_validation">
         <div class="mb-4 d-flex justify-content-center">
-            <img src="{{ old($name,$value) ?? config('buicomponents.cropper.default_image') }}"
+            <img src="{{ old($name,$value) ?? $attributes->get('default-image') ?? config('buicomponents.cropper.default_image') }}"
                  alt="{{ $name }}" class="{{ $class }}" id="{{ $name }}_out_put_preview"/>
         </div>
         <div class="d-flex justify-content-center cropped-image-preview-action">
@@ -77,7 +77,7 @@
         <div class="image_area m-auto">
             <label for="{{ $name }}_file_input">
                 <img
-                    src="{{ old($name,$value) ?? config('buicomponents.cropper.default_image') }}"
+                    src="{{ old($name,$value) ?? $attributes->get('default-image') ?? config('buicomponents.cropper.default_image') }}"
                     alt="{{ $name }}" class="{{ $class }}" id="{{ $name }}_out_put_preview">
                 <x-buicomponents::ui.file name="{{ $name }}_file_input" id="{{ $name }}_file_input"
                                           class="d-none" :btForm="false" labelClass="mb-0"
