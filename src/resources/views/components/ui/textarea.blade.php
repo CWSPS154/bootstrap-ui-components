@@ -33,7 +33,9 @@
         @endif
         @if($btForm)</div>
 @endif
-
+@push('scripts')
+    {{ $bscripts ?? null }}
+@endpush
 @if(config('buicomponents.tinymce.enable'))
     @pushonce('styles')
         @forelse(config('buicomponents.tinymce')['css'] as $css)
