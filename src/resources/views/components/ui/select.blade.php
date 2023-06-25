@@ -126,7 +126,7 @@
                     @endif
                     triggerChange: true,
                     ajax: {
-                        url: "{{ route($getOption()) }}",
+                        url: "{{ $getOption() }}",
                         type: "get",
                         dataType: 'json',
                         delay: 250,
@@ -151,7 +151,7 @@
                 // Set default value using ajax
                 let id = {!! $getValue(old($getName(),$value)) !!};
                 if (id) {
-                    $.ajax("{{ route($getOption()) }}", {
+                    $.ajax("{{ $getOption() }}", {
                         data: {
                             id: id
                         },
