@@ -102,14 +102,14 @@
     @endpushonce
     @pushonce('scripts')
         <script>
-            {{ $before_summernote_scripts ?? null }}
             $(document).ready(function() {
+            {{ $before_summernote_scripts ?? null }}
                 $('textarea[data-provide="summernote"]').summernote({
                     placeholder: '{{ $placeholder }}',
                     {!! config('buicomponents.summernote.other-options').$attributes->get('other-options') !!}
                 });
-            });
             {{ $after_summernote_scripts ?? null }}
+            });
         </script>
     @endpushonce
 @endif
