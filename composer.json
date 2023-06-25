@@ -1,7 +1,7 @@
 {
     "name": "cwsps154/bootstrap-ui-components",
     "description": "Help to build ui elements with bootstrap using laravel components",
-    "version": "2.0.178",
+    "version": "2.0.179",
     "keywords": [
         "laravel",
         "blade",

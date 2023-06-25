@@ -34,7 +34,7 @@
         @if($btForm)</div>
 @endif
 @push('scripts')
-    {{ $bscripts ?? null }}
+    {{ $before_scripts ?? null }}
 @endpush
 @if(config('buicomponents.tinymce.enable'))
     @pushonce('styles')
@@ -51,12 +51,14 @@
     @endpushonce
 @pushonce('scripts')
     <script>
+        {{ $before_tiny_scripts ?? null }}
         tinymce.init({
             selector: 'textarea[data-provide="tinymce"]',
             plugins: '{{ $getPlugins }}',
             toolbar: '{{ $getToolbar }}',
             {{ config('buicomponents.tinymce.other-options').$attributes->get('other-options') }}
         });
+        {{ $afte_tiny_scripts ?? null }}
     </script>
 @endpushonce
 @endif
@@ -75,11 +77,13 @@
     @endpushonce
     @pushonce('scripts')
         <script>
+            {{ $before_ceditor_scripts ?? null }}
             ClassicEditor
                 .create( document.querySelector( 'textarea[data-provide="ckeditor"]' ) )
                 .catch( error => {
                     console.error( error );
                 });
+            {{ $after_ceditor_scripts ?? null }}
         </script>
     @endpushonce
 @endif
@@ -98,12 +102,14 @@
     @endpushonce
     @pushonce('scripts')
         <script>
+            {{ $before_summernote_scripts ?? null }}
             $(document).ready(function() {
                 $('textarea[data-provide="summernote"]').summernote({
                     placeholder: '{{ $placeholder }}',
                     {!! config('buicomponents.summernote.other-options').$attributes->get('other-options') !!}
                 });
             });
+            {{ $after_summernote_scripts ?? null }}
         </script>
     @endpushonce
 @endif
