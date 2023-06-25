@@ -99,7 +99,7 @@
             $(document).ready(function() {
                 $('textarea[data-provide="summernote"]').summernote({
                     placeholder: '{{ $placeholder }}',
-                    {{ config('buicomponents.summernote.other-options').$attributes->get('other-options') }}
+                    {!! config('buicomponents.summernote.other-options').$attributes->get('other-options') !!}
                 });
             });
         </script>

@@ -61,7 +61,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('input[data-provide="fileinput"]#{{$id}}').fileinput({
-                {{ $attributes->get('options') }}
+                {!! $attributes->get('options') !!}
             });
         });
     </script>
