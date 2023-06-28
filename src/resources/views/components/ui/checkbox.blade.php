@@ -15,7 +15,7 @@
         @endif
 
         <input type="{{ $type }}" class="{{ $inputClass }}" id="{{ $id }}" name="{{ $name }}"
-               {{ $isHelp() }} {{ $attributes->except('defaultValue') }} {{ $isChecked(old($mergedName(),$value)) }} value="{{ old($mergedName(),$attributes->get('defaultValue')) }}">
+               {{ $isHelp() }} {{ $attributes->except('defaultValue') }} {{ $isChecked(old($mergedName(),$value)) }} value="{{ $attributes->get('defaultValue') }}">
 
         @if($label)
             <label for="{{ $id }}" class="{{ $labelClass }}">
