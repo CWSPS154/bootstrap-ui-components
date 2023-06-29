@@ -69,6 +69,9 @@
         @if($attributes->has('multiple'))
             <div class="{{ $attributes->get('select2Class') ?? 'select2-purple' }}">
                 @endif
+
+                {{ $select_before ?? null }}
+
                 <select class="{{ $class }}"
                         name="{{$name}}"
                         id="{{$id}}" {{ $attributes->except('options') }}
@@ -91,6 +94,9 @@
                         @endforelse
                     @endif
                 </select>
+
+                {{ $select_after ?? null }}
+
                 @if(config('buicomponents.error') && $error)
                     @error($getName())
                     <span class="{{ $errorClass ?? config('buicomponents.error-class') }}" role="alert">

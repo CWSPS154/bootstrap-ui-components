@@ -23,10 +23,13 @@
             </label>
         @endif
 
-
+        {{ $input_before ?? null }}
+        
         <input type="{{ $type }}" class="{{ $inputClass }}" id="{{ $id }}" name="{{ $name }}"
                {{ $isHelp() }} placeholder="{{ $placeholder }}"
                {{ $attributes }} value="{{ $getName() ? old($name,$value) : null }}">
+
+        {{ $input_after ?? null }}       
 
         @if($help)
             <small id="{{ $getName() }}Help" class="{{ $helpClass }}">{{ $help }}</small>

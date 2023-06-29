@@ -14,8 +14,12 @@
     <div class="{{ $btFormClass }}">
         @endif
 
+        {{ $input_before ?? null }}
+
         <input type="{{ $type }}" class="{{ $inputClass }}" id="{{ $id }}" name="{{ $name }}"
                {{ $isHelp() }} {{ $attributes->except('defaultValue') }} {{ $isChecked(old($mergedName(),$value)) }} value="{{ $attributes->get('defaultValue') }}">
+
+        {{ $input_after ?? null }}
 
         @if($label)
             <label for="{{ $id }}" class="{{ $labelClass }}">

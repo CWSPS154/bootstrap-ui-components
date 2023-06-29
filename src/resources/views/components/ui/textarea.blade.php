@@ -19,8 +19,14 @@
                 @endif
             </label>
         @endif
+
+        {{ $textarea_before ?? null }}
+
         <textarea class="{{ $inputClass }}" id="{{ $id }}" name="{{ $name }}"
                   placeholder="{{ $placeholder }}" {{ $attributes }} {{ $isHelp() }}>{{ old($getName(),$value) }}</textarea>
+
+        {{ $textarea_after ?? null }}
+                  
         @if($help)
             <small id="{{ $getName() }}Help" class="{{ $helpClass }}">{{ $help }}</small>
         @endif
